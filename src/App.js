@@ -23,8 +23,7 @@ function App() {
 
     const payload = {
       prompt,
-      mode: "single",
-      voices: [{ voiceName: voice }],
+      voice,
     };
 
     try {
