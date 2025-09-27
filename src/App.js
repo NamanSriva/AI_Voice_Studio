@@ -36,15 +36,24 @@ function App() {
       setAudioUrl(url);
     } catch (err) {
       console.error("Frontend error:", err);
+      if (err.response?.status === 429) {
+        setErrorMessage(err.response.data.error);
+      } 
       alert("Failed to generate audio");
     } finally {
       setLoading(false);
     }
   };
+if (err.response?.status === 429) {
+  setErrorMessage(err.response.data.error);
+}
 
   return (
+    
     <div className="container">
+      
       <h2>AI Voice Studio</h2>
+{errorMessage && <div className="error-banner">{errorMessage}</div>}
 
       {/* Textarea */}
       <div className="form-row">
@@ -91,6 +100,7 @@ function App() {
           </a>
         </div>
       )}
+      
     </div>
   );
 }

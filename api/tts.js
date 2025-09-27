@@ -76,10 +76,10 @@ export default async function handler(req, res) {
   } catch (err) {
     console.error("Gemini API call failed:", err);
     // Check for quota/tokens exhausted errors
-    if (err.message?.includes("quota") || err.message?.includes("exceeded") || err.message?.includes("tokens")) {
-      return res.status(429).json({
-        error: "Free quota exceeded or tokens exhausted. Please try again later or upgrade your plan."
-      });
+    if (err.status === 429 || err.message?.includes("quota") || err.message?.includes("exceeded")) {
+    return res.status(429).json({
+      error: "Free quota exceeded. Please wait a bit or upgrade your plan."
+    });
     }
     res.status(500).json({ error: "Gemini API call failed", details: err.message });
   }
