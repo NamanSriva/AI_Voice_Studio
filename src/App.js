@@ -52,7 +52,9 @@ function App() {
     <div className="container">
       
       <h2>AI Voice Studio</h2>
-{errorMessage && <div className="error-banner">{errorMessage}</div>}
+
+      <h3>{errorMessage && <div className="error-banner">{errorMessage}</div>}</h3>
+
 
       {/* Textarea */}
       <div className="form-row">
