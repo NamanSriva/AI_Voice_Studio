@@ -4,8 +4,6 @@ import "./App.css";
 
 const voices = [
   { name: "Kore", label: "Kore (Female)" },
-  { name: "Sasha", label: "Sasha (Female)" },
-  { name: "Charon", label: "Charon (Male)" },
   { name: "Fenrir", label: "Fenrir (Male)" },
 ];
 
