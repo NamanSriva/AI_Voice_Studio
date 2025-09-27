@@ -12,6 +12,7 @@ function App() {
   const [voice, setVoice] = useState("Kore");
   const [loading, setLoading] = useState(false);
   const [audioUrl, setAudioUrl] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleGenerate = async () => {
     if (!prompt.trim()) return;
