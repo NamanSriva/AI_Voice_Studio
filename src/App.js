@@ -45,9 +45,7 @@ function App() {
       setLoading(false);
     }
   };
-if (err.response?.status === 429) {
-  setErrorMessage(err.response.data.error);
-}
+
 
   return (
     
